@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Objects</title>
+</head>
+<body>
+
+    <script>
+        // Comparing arrays and objects.
+        let myArray = [1, 2, 3, 4]
+        let myObject = {
+            "first": 1,
+            "second": 2,
+            "third": 3,
+            "fourth": 4,
+            "a space": " "
+        };
+        
+        // A javascript object "key" is actually called an Object's Property.
+
+        // Objects can use Square Bracket Notation.
+        console.log(myObject["third"]);
+        myObject["a space"];
+
+        // and also Dot Notation.
+        console.log(myObject.third);
+
+        // myObject.a space; cannot use dot notation for keys with space as it ends up being a syntax error.
+
+        // Comparing Objects
+        let object1 = {
+            "number": 3
+        };
+
+        let object2 = {
+            "number": 3
+        };
+
+        if (object1 == object2) {
+            console.log("These numbers are the same!")
+        } else {
+            console.log("These numbers are not the same!")
+        }
+
+        // Copying Objects
+
+        // Copying nomral numbers
+        let number1 = 1;
+        let number2 = number1;
+        number1 = 100;
+
+        console.log(number2)
+
+        // It doesn't work in objects as we may expect them to...
+        let objectA = {
+            "number": 1
+        };
+
+        let objectB = objectA;
+
+        objectA.number = 100;
+
+        console.log(objectB.number);
+
+        // You can make a "copy" of an Object through a "Deep Copy". For example "object.assign()" or "shallow copy"
+    </script>
+
+</body>
+</html>

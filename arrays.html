@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Arrays</title>
+</head>
+
+<body>
+    <script>
+
+        let aVariable = 1;
+
+        aVariable = 2;
+
+        let anotherVAriable = 2;
+
+        // A piece of data in an array is an "Array Element".
+        let myArray = [1, 2, 3, 4, ,5, 6, 7, 8, 9, 10];
+
+        // Updata a value in an array.
+        // Square bracket notation.
+        myArray[4] = 70; // A value in an array can be updated.
+        myArray[3] // A Specific array element can be called at any time. 
+        aVariable;
+
+        myArray[15] = 16;
+
+        console.log(myArray);
+
+        // Basic Array Method
+        // A "method" is a function that belongs to an Object
+        myArray.push(); // a value that is placed at the end of array.
+        myArray.pop(); // Removes the last value of the array.
+        myArray.unshift(); // Adds a value at the start of the array.
+        myArray.shift(); // Removes the value at the start of the array.
+
+        let myString = "Hello world, it's you! I feel fine."
+
+        let myStringArray = myString.split("");
+        console.log(myStringArray);
+
+        // Displays string arrays in reverse order.
+        myStringArray.reverse();
+
+        console.log(myStringArray);
+
+        let myUpdatedString = myStringArray.join("")
+
+        console.log(myUpdatedString);
+    </script>    
+</body>
+</html>
