@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Loops</title>
+</head>
+<body>
+    <script>
+        
+        // For loop, count + 1 can be written short hand as count++
+        console.log("First Loop");
+
+        for (let count = 0; count < 10; count = count + 1) {
+            console.log("Loop #" + count);
+        }
+
+        console.log("Second Loop");
+
+        for (let count = 10; count > 0; count = count - 1) {
+            console.log("Loop #" + count);    
+        }
+
+        // While Loop
+
+        console.log ("third Loop");
+        
+        let count = 0;
+        
+        while (count < 10) {
+            console.log("Loop #" + count);
+
+            count = count + 1
+        }
+
+        // Do While Loop
+        do {
+            console.log("Hello World");
+        } while (false);
+          
+    </script>
+</body>
+</html>

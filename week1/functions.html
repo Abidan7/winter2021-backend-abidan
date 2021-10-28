@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Functions</title>
+</head>
+<body>
+    
+ <script>
+    "use strict";    
+    // Function Synthax
+
+    // if "return"; was placed at the beginning, it will stop running the code prematurely.
+
+    // correct executable syntax must be written as function + myFunction + (run code) + {}
+    function myFunction() {
+        console.log("hello you!")
+    } 
+
+    // Tells the function to run its code.
+    myFunction();
+    myFunction();
+
+    // Reference to the function.
+    myFunction;
+
+    // Parameters and Arguments
+    
+    function multiply4thPower(number) {
+        // let number = ;
+        let results = number * number * number * number;
+        console.log(results);
+    }
+
+    // Arguments: The data that gets passed to the parameter, arguments are written in parenthesis of the function call.
+  
+    multiply4thPower(5);
+    multiply4thPower(15);
+    multiply4thPower(25);
+
+    // Return Keyword
+
+    function returnName() {
+        return "Jose";
+        // When the return keyword is executed, the functions ENDS, inmediately;
+
+        console.log ("Secret Message");
+    }
+
+ </script>
+
+</body>
+</html>
