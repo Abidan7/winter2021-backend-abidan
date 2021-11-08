@@ -1,0 +1,22 @@
+{
+  "name": "winter2021-backend-abidan",
+  "version": "1.0.0",
+  "description": "This is my first node project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abidan7/winter2021-backend-abidan.git"
+  },
+  "author": "Jose Abidan Ramirez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Abidan7/winter2021-backend-abidan/issues"
+  },
+  "homepage": "https://github.com/Abidan7/winter2021-backend-abidan#readme",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}

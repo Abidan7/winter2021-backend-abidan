@@ -47,7 +47,7 @@
 
         // Copying Objects
 
-        // Copying nomral numbers
+        // Copying normal numbers
         let number1 = 1;
         let number2 = number1;
         number1 = 100;
@@ -66,6 +66,51 @@
         console.log(objectB.number);
 
         // You can make a "copy" of an Object through a "Deep Copy". For example "object.assign()" or "shallow copy"
+
+        
+        // <object-literal>  ::= "{" <property-list> "}";
+                    
+        // <property-list>   ::= <property> ["," <property>]*;
+                    
+        // <property> ::= <data-property>
+        //           | <getter-property>
+        //           | <setter-property>;
+                    
+        // <data-property>   ::= <property-name> ":" <expression>;
+                    
+        // <getter-property> ::= "get" <identifier>
+        //          :       <function-parameters>
+        //          :       <function-block>;
+                    
+        // <setter-property> ::= "set" <identifier>
+        //            :       <function-parameters>
+        //            :       <function-block>;
+                    
+        // <property-name>   ::= <identifier>
+        //           | <quoted-identifier>;
+                
+        // Object literals can only appear inside expressions in JavaScript. Since the syntax is ambiguous to block statements in the language, new-comers usually confound the two:
+
+        // This is a block statement, with a label:
+        // { foo: 'bar' }
+        // => 'bar'
+
+        // This is a syntax error (labels can't be quoted):
+        // { "foo": 'bar' }
+        // => SyntaxError: Invalid label
+
+        // This is an object literal (note the parenthesis to force
+        // parsing the contents as an expression):
+        // ({ "foo": 'bar' })
+        // => { foo: 'bar' }
+
+        // Where the parser is already expecting expressions,
+        // object literals don't need to be forced. E.g.:
+        // var x = { foo: 'bar' }
+        // fn({foo: 'bar'})
+        // return { foo: 'bar' }
+        // 1, { foo: 'bar' } ( ... )
+
     </script>
 
 </body>
