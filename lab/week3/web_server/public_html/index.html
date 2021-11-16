@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express Server | Home</title>
+</head>
+<body>
+    <p>Hello whole World, it's you!</p>
+
+    <script>
+        // Creates an HTTP Request Object.
+        let xhr = new XMLHttpRequest();
+
+        // We provide the correct type of Request and address sent to it.
+        // For example; if we were to send something to Heroku, we would have to substitute localhost:3000 with the heroku address.
+        xhr.open("POST", "http://localhost:3000/test", true);
+        // CORS = Cross-Origin Resource Sharing, if I were to type http://100.0.01 (my Internet address) it would block my address due to CORS.
+        
+        // We specify what kind of content data we send.
+        xhr.setRequestHeader("Content-Type", "application/json");
+
+        // We send the actual data.
+        xhr.send('{"message": "Hey You!"}');
+        
+        // We run this function to as a response.
+        xhr.onload = function () {
+            this.responseText;
+
+            console.log("The server has responded.");
+            // this.responseText is the property of the response object holding a JSON string.
+            console.log(this.responseText);
+        };
+    </script>
+</body>
+</html>

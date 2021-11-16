@@ -1,0 +1,14 @@
+{
+  "name": "match_number",
+  "version": "1.0.0",
+  "description": "\"\u0016A web service where a userand the back-end picks a number then see if both numbers match\"\u001b[D.\"",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Abidan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
