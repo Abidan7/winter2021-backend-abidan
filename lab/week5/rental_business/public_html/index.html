@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rental Business Dashboard</title>
+    
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+
+    <style>
+
+        div {
+            border: solid black 1px;
+        }
+
+        #new-vehicle-form {
+            display: none;
+        }
+
+        #additional-vehicle-form {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Rental Business Dashboard</h2>
+    </header>
+
+    <main>
+       <button id="button-vehicle-form">Add New Vehicle</button>
+        <div id="new-vehicle-form">
+           <h3>Add New Vehicle</h3>
+            <form>
+                <label for="name">Nickname</label>
+                <input id="name" type="text" />
+                <br />
+
+                <label for="make">Make</label>
+                <label for="model">Model</label>                    <label for="year">Year</label>
+                <br />
+                    
+                <input id="make" type="text" />
+                <input id="model" type="text" />
+                <input id="year "type="number">                    <br />
+                    
+                <label for="vin">Vehicle Identification Number</label>
+                <input id="vin" type="text" /><br />                
+                <label for="purchased">Purchased Date</label>
+                <input id="purchased" type="date" /> <br />
+
+                <label for="owner">Owner's Full Name</label>       <input id="owner" type="text" /><br />
+                <label for="miles">Odometer Reading (Miles)</label>
+                <input id="miles" type="number" />
+            </form>
+                
+                <p><a id="additional-form-url" href="#">Additional Details</a></p>
+                
+            <div id="additional-vehicle-form">
+                <h3>Additional Vehicle Details</h3>
+                <form>
+                    <label for="occupancy">Number of Seats</label>
+                    <input id="occupancy" type="number" /> <br />
+                    <label for="wheels">Wheels</label>
+                    <input id="wheels" type="number" /> <br />
+
+                    <label for="doors">Doors</label>
+                    <input id="doors" type="number" /> <br />
+                    <label for="engineHP">Engine </label>
+                    <input id="engineHP" type="number" /> <br />
+                    <label for="lastMaintMiles">Last Maintenance Performed</label>
+                    <input id="lastMaintMiles" type="number" />
+                    <br />
+
+                    <!-- Switch over to drop-down menus -->
+                    <label for="fuelType">Fuel Type</label>
+                    <input id="fuelType" type="number" />
+                    <label for="fuelCap">Fuel Tank Capacity (in gallons)</label>
+                    <input id="fuelCap" type="number" /><br />
+
+                    <label for="currentFuelLevel">Fuel Level (in gallons)</label>
+                    <input id="currentFuelLevel" type="number" /> <br />
+
+                    <!-- Switch over to radio buttons -->
+                    <label for="bodyType">Body Type</label>
+                    <input id="bodyType" type="number" /> <br />
+
+                    <label for="gvwr">Gross Vehicle Weight Gross (GVWR)</label>
+                    <input id="gvwr" type="number" /> <br />
+                </form>
+            </div>
+            
+        <button id="cancel">Cancel</button>
+        <button id="submit">Create Entry</button>
+
+            
+       </div>
+
+       <div id="vehicle-list">
+           <h3>Vehicle List</h3>
+       </div>
+    </main>
+    
+    <footer></footer>
+
+    <script>
+        $(document).ready(function () {
+            $("#button-vehicle-form").click(function () {
+                $("#new-vehicle-form").css("display", "block");
+            });
+
+            $("#additional-form-url").click(function (event) {
+                // Stops the page from being reloaded, clearing its contents.
+                event.preventDefault();
+
+                $("#additional-vehicle-form").css("display", "block");
+            });
+
+            $("#cancel").click(function () {
+                $("#new-vehicle-form").css("display", "none");
+                $("#new-vehicle-form form").trigger("reset");
+            });
+
+            $("#submit").click(function() {
+              
+                let dataToSend = {
+                    name: $("#name").val(),
+                    make: $("#make").val(),
+                    model: $("#model").val(),
+                    year: parseInt($("#year").val()),
+                    purchased: $("#purchased").val(),
+                    vin: $("#vin").val(),
+                    owner: $("#owner").val(),
+                    miles: parseInt($("#miles").val()),
+                    occupancy: $("#occupancy").val(),
+                    wheels: $("#wheels").val(),
+                    doors: $("#doors").val(),
+                    engineHP: $("#engineHP").val(),
+                    lastMaintMiles: $("#lastMaintMiles").val(),
+                    fuelType: $("#fuelType").val(),
+                    fuelCap: $("#fuelCap").val(),
+                    fuelCurrent: $("#fuelCurrent").val(),
+                    mpg: $("#mpg").val(),
+                    bodyType: $("#bodyType").val(),
+                    gvwr: $("#gvwr").val()
+                };    
+                
+                console.log(dataToSend);
+            });
+        });
+    </script>
+</body>
+</html>
