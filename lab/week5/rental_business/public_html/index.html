@@ -42,19 +42,23 @@
                 <br />
 
                 <label for="make">Make</label>
-                <label for="model">Model</label>                    <label for="year">Year</label>
+                <label for="model">Model</label>
+                <label for="year">Year</label>
                 <br />
                     
                 <input id="make" type="text" />
                 <input id="model" type="text" />
-                <input id="year "type="number">                    <br />
+                <input id="year "type="number" />
+                <br />
                     
                 <label for="vin">Vehicle Identification Number</label>
                 <input id="vin" type="text" /><br />                
                 <label for="purchased">Purchased Date</label>
-                <input id="purchased" type="date" /> <br />
+                <input id="purchased" type="date" />
+                <br />
 
-                <label for="owner">Owner's Full Name</label>       <input id="owner" type="text" /><br />
+                <label for="owner">Owner's Full Name</label>
+                <input id="owner" type="text" /><br />
                 <label for="miles">Odometer Reading (Miles)</label>
                 <input id="miles" type="number" />
             </form>
@@ -64,34 +68,38 @@
             <div id="additional-vehicle-form">
                 <h3>Additional Vehicle Details</h3>
                 <form>
-                    <label for="occupancy">Number of Seats</label>
-                    <input id="occupancy" type="number" /> <br />
-                    <label for="wheels">Wheels</label>
-                    <input id="wheels" type="number" /> <br />
-
-                    <label for="doors">Doors</label>
-                    <input id="doors" type="number" /> <br />
-                    <label for="engineHP">Engine </label>
-                    <input id="engineHP" type="number" /> <br />
-                    <label for="lastMaintMiles">Last Maintenance Performed</label>
-                    <input id="lastMaintMiles" type="number" />
-                    <br />
-
-                    <!-- Switch over to drop-down menus -->
-                    <label for="fuelType">Fuel Type</label>
-                    <input id="fuelType" type="number" />
-                    <label for="fuelCap">Fuel Tank Capacity (in gallons)</label>
-                    <input id="fuelCap" type="number" /><br />
-
-                    <label for="currentFuelLevel">Fuel Level (in gallons)</label>
-                    <input id="currentFuelLevel" type="number" /> <br />
-
                     <!-- Switch over to radio buttons -->
                     <label for="bodyType">Body Type</label>
-                    <input id="bodyType" type="number" /> <br />
-
+                    <input id="bodyType" type="text" />
                     <label for="gvwr">Gross Vehicle Weight Gross (GVWR)</label>
-                    <input id="gvwr" type="number" /> <br />
+                    <input id="gvwr" type="number" /><br />
+
+                    <!-- Text and data -->
+                    <label for="engineHP">Engine Power Ouput (Hp)</label>
+                    <input id="engineHP" type="number" />
+                    <label for="wheels">Wheels</label>
+                    <input id="wheels" type="number" />
+                    <br />
+                    <label for="doors">Doors</label>
+                    <input id="doors" type="number" />
+                    <label for="occupancy">Number of Seats</label>
+                    <input id="occupancy" type="number" />
+                    <br />
+                    
+                    <!-- Switch over to drop-down menus -->
+                    <label for="fuelType">Fuel Type</label>
+                    <input id="fuelType" type="text" />
+                    <label for="fuelCap">Fuel Tank Capacity (in gallons)</label>
+                    <input id="fuelCap" type="number" />
+                    <br />
+                    <label for="mpg">Average Fuel Economy</label>
+                    <input id="mpg" type="number" />
+                    <label for="lastMaintMiles">Last Maintenance Performed</label>
+                    <input id="lastMaintMiles" type="number" />
+                    <label for="fuelCurrent">Fuel Level (in gallons)</label>
+                    <input id="fuelCurrent" type="number" />
+                    <br />
+
                 </form>
             </div>
             
@@ -129,25 +137,26 @@
             $("#submit").click(function() {
               
                 let dataToSend = {
-                    name: $("#name").val(),
                     make: $("#make").val(),
                     model: $("#model").val(),
                     year: parseInt($("#year").val()),
-                    purchased: $("#purchased").val(),
                     vin: $("#vin").val(),
-                    owner: $("#owner").val(),
                     miles: parseInt($("#miles").val()),
+                    bodyType: $("#bodyType").val(),
+                    gvwr: $("#gvwr").val(),
                     occupancy: $("#occupancy").val(),
                     wheels: $("#wheels").val(),
                     doors: $("#doors").val(),
                     engineHP: $("#engineHP").val(),
-                    lastMaintMiles: $("#lastMaintMiles").val(),
                     fuelType: $("#fuelType").val(),
                     fuelCap: $("#fuelCap").val(),
-                    fuelCurrent: $("#fuelCurrent").val(),
                     mpg: $("#mpg").val(),
-                    bodyType: $("#bodyType").val(),
-                    gvwr: $("#gvwr").val()
+                    name: $("#name").val(),
+                    purchased: $("#purchased").val(),
+                    owner: $("#owner").val(),                    
+                    lastMaintMiles: $("#lastMaintMiles").val(),
+                    fuelCurrent: $("#fuelCurrent").val()
+
                 };    
                 
                 console.log(dataToSend);
