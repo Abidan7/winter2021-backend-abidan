@@ -72,7 +72,7 @@ if (fs.existsSync(file)) {
 let treeSite = {};
 
 // Goes through each StreetTree object and checks for qSiteInfo values and adds it to the treeSite tally.
-for (let i = 0; i < treeObjects.lenght; i++) {
+for (let i = 0; i < treeObjects.length; i++) {
 
     let currentTree = treeObjects[i];
 
@@ -83,8 +83,7 @@ for (let i = 0; i < treeObjects.lenght; i++) {
         treeSite[currentTree.qSiteInfo] = 1;
     }
 }
-
-console.log(treeSite);
+// console.log(treeSite);
 
 // Tally the amount of sidewalk vs nonsidewalk trees.
 let sidewalkTally = {
@@ -99,14 +98,14 @@ for (let site in treeSite) {
     let siteArray = site.split(":");
     // console.log(siteArray);
 
-    // Check if the first array element holds the word Sidewalk.
+    // Check if the first array element holds the word Sidewalk. It doesn't check for space character after the word sidewalk.
     if (siteArray[0] === "Sidewalk") {
         sidewalkTally.sidewalk += treeSite[site];
     } else {
         sidewalkTally.nonsidewalk += treeSite[site];
     }
 }
-console.log(sidewalkTally);
+// console.log(sidewalkTally);
 
 // Official answer to question.
 let answerQ1 = `The percentage of sidewalk trees vs other trees in San Francisco is ${(sidewalkTally.sidewalk / (sidewalkTally.sidewalk + sidewalkTally.nonsidewalk)) * 100}%.`;
@@ -114,6 +113,95 @@ let answerQ1 = `The percentage of sidewalk trees vs other trees in San Francisco
 console.log(answerQ1);
 
 // Whats the most frequent Tree Species?
+// console.log(treeObjects[38928]);
+
+let treeSpecies = {};
+
+for (let i = 0; i < treeObjects.length; i++) {
+
+    let currentTree = treeObjects[i];
+
+    if (treeSpecies.hasOwnProperty(currentTree.qSpecies)) {
+        treeSpecies[currentTree.qSpecies] += 1;
+    } else {
+        treeSpecies[currentTree.qSpecies] = 1;
+    }
+}
+// console.log(treeSpecies);
+
+let highestSpecies = "";
+let highestCount = 0;
+
+delete treeSpecies["Tree(s) ::"];
+
+for (let species in treeSpecies) {
+    let currentSpeciesCount = treeSpecies[species];
+
+    if (highestCount < currentSpeciesCount) {
+        highestSpecies = species;
+        highestCount = currentSpeciesCount
+    }
+}
+
+// Answer to question:
+console.log(`The most frequent tree species seen in the streets of San Francisco is ${highestSpecies}`);
+
+
 // What trees that have plant date, how many were planted in 1955?
+let dates = {};
+let noDateCount = 0;
+
+for (let i = 0; i < treeObjects.length; i++) {
+    let date = treeObjects[i].PlantDate;
+
+    if (date === "") {
+        noDateCount += 1;
+        continue;
+    }
+
+    let dateArray = date.split (" ");
+
+    // Example: dataArray = ["04/01/2002", "12:00:00", "AM"]
+
+    let monthdayyear = dateArray[0];
+    let yearArray = monthdayyear.split("/");
+    let year = yearArray[2];
+
+    if (year === "2022") {
+        console.log(treeObjects[i]);
+    }
+
+    if (dates.hasOwnProperty(year)) {
+        dates[year] += 1;
+    } else {
+        dates[year] = 1;
+    }
+}
+// console.log(dates);
+// console.log(noDateCount);
+
+// Answer to question:
+console.log(`There were ${dates["1955"]} trees planted in 1955.`)
+
+
 // How many trees does DPW take care of?
-// How many trees are scheduled for removal/cutting out? 
+let careTaker = {};
+
+for (let i = 0; i < treeObjects.length; i++) {
+    let currentTree = treeObjects[i];
+
+    let owner = currentTree.qCaretaker;
+
+    if (careTaker.hasOwnProperty(owner)) {
+        careTaker[owner] += 1;
+    } else {
+        careTaker[owner] = 1;
+    }
+}
+// console.log(careTaker);
+
+// Answer to question:
+console.log(`DPW takes care of ${careTaker["DPW"]} trees.`)
+
+
+// How many trees are scheduled for removal/cutting out? Not possible to answer if code requires future date.
